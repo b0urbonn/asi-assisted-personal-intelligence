@@ -1,57 +1,79 @@
 # Features
 
-Planned feature set for ASI, organized by capability area.
+Complete planned feature catalog, organized by capability area and phase.
 
-## Conversation
+## Phase 1 — Core Assistant
 
-- Natural-language chat interface
-- Context-aware follow-up questions
-- Multi-turn conversations that remember what was discussed
-- Support for text, and later voice and images
+### Conversation
+- [ ] Natural-language chat with streaming responses
+- [ ] Session memory — follow-up questions with context
+- [ ] Quick capture: type or dictate tasks, notes, reminders
 
-## Tasks & Productivity
+### Tasks & Reminders
+- [ ] Create, edit, complete, delete tasks
+- [ ] Due dates, priorities, recurring tasks
+- [ ] "Today" view — what needs doing now
+- [ ] Reminder scheduling with notification groundwork
 
-- Create, edit, complete, and prioritize tasks
-- Due dates, priorities, and recurring tasks
-- Projects and subtasks
-- Natural-language capture ("remind me to call mom Friday")
+### Notes
+- [ ] Quick notes linked to tasks/context
+- [ ] Full-text search
 
-## Reminders & Scheduling
+### Basics
+- [ ] Account auth (email + OAuth providers)
+- [ ] Settings: notification preferences, basic profile
+- [ ] Cross-device sync foundation (same account = same data)
 
-- Time-based and context-based reminders
-- Smart delivery (right time, right channel)
-- Recurring reminders
-- Meeting prep nudges
+## Phase 2 — Personal Context
 
-## Memory & Personalization
+### Memory
+- [ ] Long-term memory: preferences, routines, recurring facts
+- [ ] Memory transparency screen — view, edit, delete anything ASI knows
+- [ ] Memory explanations — "why do you know this?"
 
-- Remember preferences, routines, and recurring commitments
-- Learn how you like information presented
-- Forget anything on request (privacy control)
+### Integrations
+- [ ] Calendar (Google/Outlook): read schedule, create events
+- [ ] Email (Gmail/Outlook): summaries, draft replies, follow-up tracking
+- [ ] Goals: set, track, progress over time
 
-## Integrations (Phase 2+)
+### Briefings
+- [ ] Morning briefing: schedule + tasks + reminders + suggestions
+- [ ] Configurable briefing time and format
 
-- **Calendar** — read schedule, create events, resolve conflicts
-- **Email** — summaries, drafting, follow-up tracking
-- **Notes** — search and link notes to tasks/context
-- **Future:** Slack, Notion, Todoist, GitHub, and more
+## Phase 3 — Proactive Intelligence
 
-## Proactive Intelligence (Phase 3+)
+- [ ] Context-aware suggestions ("meeting with X at 2 — review the doc?")
+- [ ] Follow-up tracking ("you said you'd send the report — done?")
+- [ ] Weekly review: time usage, accomplishments, patterns
+- [ ] Natural-language automation rules
+- [ ] Smart notification delivery (batched, prioritized)
+- [ ] Meeting prep nudges
 
-- Daily morning briefing
-- Weekly review with time/habit insights
-- Smart suggestions based on context
-- Automated follow-ups ("you said you'd send X — done?")
+## Phase 4 — Extensions
 
-## Insights
+### Platforms
+- [ ] Native iOS app
+- [ ] Native Android app
+- [ ] Desktop apps (macOS, Windows)
+- [ ] Offline mode for core features
+- [ ] Voice interface (push-to-talk → wake-word evaluation)
 
-- Where your time went (across connected tools)
-- Habit and routine tracking
-- Goal progress over time
+### Ecosystem
+- [ ] Public API for integrations
+- [ ] Plugin system
+- [ ] Third-party integrations: Slack, Notion, Todoist, GitHub, etc.
+- [ ] Integration marketplace (if warranted)
 
-## Privacy & Control
+## Cross-Cutting
 
-- View and delete all stored memory
-- Per-integration opt-in/opt-out
-- Local-first mode (planned, Phase 4)
-- Transparent data usage explanations
+### Privacy & Control
+- [ ] View/export/delete all stored data
+- [ ] Per-integration opt-in/opt-out
+- [ ] Local-first mode (Phase 4 exploration)
+- [ ] Transparent AI explanations
+
+### Quality
+- [ ] Accessibility (WCAG 2.1 AA on web)
+- [ ] Dark mode, responsive design
+- [ ] Usage analytics (privacy-preserving)
+- [ ] Cost metering per user/feature

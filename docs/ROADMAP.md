@@ -1,68 +1,123 @@
-# Project Plan & Roadmap
+# Roadmap & Plan
 
-This document describes the planned phases of development for ASI. Timelines are intentionally flexible — the focus is on delivering a solid foundation before expanding scope.
+> A phased plan for building ASI across mobile, desktop, and web. Phases are gated — each must deliver its core value before the next begins.
+
+## Phase Overview
+
+```
+┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│  Phase 1     │──▶│  Phase 2     │──▶│  Phase 3     │──▶│  Phase 4     │
+│  Core        │   │  Personal    │   │  Proactive   │   │  Extensions  │
+│  Assistant   │   │  Context     │   │  Intelligence│   │  & Platforms│
+└──────────────┘   └──────────────┘   └──────────────┘   └──────────────┘
+ Web-first        Memory + sync      Briefings +        Native mobile,
+ chat + tasks     Calendar + email   insights +        desktop apps,
+                  + goals            automation        voice + plugins
+```
+
+---
 
 ## Phase 1 — Core Assistant
 
-**Goal:** A working conversational assistant you can talk to every day.
+**Goal:** A working AI assistant you can talk to daily — tasks, reminders, notes.
 
-- [ ] Conversational chat interface (web app)
-- [ ] Task management: create, complete, list, prioritize
-- [ ] Reminders and scheduled notifications
-- [ ] Notes and quick capture
-- [ ] Basic memory of user preferences
+**Strategy:** Web-first to move fast; mobile/desktop shells reuse the same API.
 
-**Deliverable:** A usable daily assistant for tasks and reminders.
+### Deliverables
+- [ ] Web chat interface with streaming responses
+- [ ] Task management: create, list, complete, prioritize, due dates
+- [ ] Reminders with push/email notification groundwork
+- [ ] Quick-capture notes
+- [ ] Session-level conversation memory
+- [ ] Auth + per-user data isolation
+- [ ] Basic API (REST + WebSocket for chat)
+
+### Milestone M1 — "First Conversation"
+Chat that can create a task from natural language and confirm it.
+
+### Milestone M2 — "Daily Driver MVP"
+A user can run their day through ASI: capture → schedule → complete.
+
+---
 
 ## Phase 2 — Personal Context
 
-**Goal:** ASI knows your world, not just your tasks.
+**Goal:** ASI knows your world — memory, calendar, email, goals. One mind across devices begins here.
 
-- [ ] Persistent memory: routines, preferences, recurring events
-- [ ] Calendar integration (read + write)
+### Deliverables
+- [ ] Long-term memory store (preferences, routines, recurring facts)
+- [ ] Memory transparency: view, edit, delete what ASI knows
+- [ ] Cross-device sync (same tasks/conversations on web ↔ mobile shell)
+- [ ] Calendar integration (read schedule, create events)
 - [ ] Email integration (summaries, draft replies)
 - [ ] Goal tracking with progress over time
-- [ ] Weekly review summaries
+- [ ] Morning briefing v1 (schedule + tasks + reminders)
 
-**Deliverable:** An assistant that understands your schedule and habits.
+### Milestone M3 — "It Knows My Day"
+ASI briefs you each morning with real calendar + task context.
+
+---
 
 ## Phase 3 — Proactive Intelligence
 
-**Goal:** ASI works for you, not just with you.
+**Goal:** ASI works *for* you — surfacing what matters before you ask.
 
-- [ ] Morning briefings: schedule, tasks, priorities
-- [ ] Smart suggestions ("you have a meeting with X tomorrow — review the doc?")
-- [ ] Automated follow-up reminders
-- [ ] Insights and analytics on time usage and habits
-- [ ] Natural-language automation rules ("every Friday, remind me to...")
+### Deliverables
+- [ ] Proactive suggestions engine (context-aware nudges)
+- [ ] Follow-up tracking ("you said you'd send X — done?")
+- [ ] Weekly review: time usage + habit insights
+- [ ] Natural-language automation rules
+- [ ] Smart notification delivery (right time, right channel, batched)
+- [ ] Cost optimization: caching, smart model routing
 
-**Deliverable:** A proactive companion that reduces mental load.
+### Milestone M4 — "It Works While I Sleep"
+ASI proactively surfaces 3+ useful insights per week per user.
 
-## Phase 4 — Extensions
+### Milestone M5 — Public Beta
+Invite-only beta with mobile apps (Phase 4 work begins in parallel).
 
-**Goal:** ASI everywhere you are.
+---
 
-- [ ] Mobile apps (iOS / Android)
-- [ ] Voice interface
-- [ ] Third-party integrations marketplace (Slack, Notion, Todoist, etc.)
-- [ ] Plugin/API for custom extensions
-- [ ] Optional local/self-hosted mode for privacy
+## Phase 4 — Extensions & Platforms
 
-**Deliverable:** A platform, not just an app.
+**Goal:** ASI everywhere — native apps, voice, and an ecosystem.
 
-## Milestones
+### Deliverables
+- [ ] Native iOS app
+- [ ] Native Android app
+- [ ] Desktop apps (macOS, Windows — approach TBD: native vs web wrapper)
+- [ ] Voice interface (push-to-talk, wake-word evaluation)
+- [ ] Offline mode / local-first option
+- [ ] Plugin & integration API (Slack, Notion, Todoist, GitHub…)
+- [ ] Integration marketplace (if traction warrants)
 
-| Milestone | Description | Phase |
-|-----------|-------------|-------|
-| M1 | First chat + task demo | 1 |
-| M2 | Daily-driver MVP | 1 |
-| M3 | Calendar/email connected | 2 |
-| M4 | Proactive briefings | 3 |
-| M5 | Public beta | 3–4 |
+### Milestone M6 — "ASI Everywhere"
+Full platform parity across all devices with synced context.
 
-## Risks & Open Questions
+---
 
-- **Privacy vs. capability** — deeper integrations mean more sensitive data access. Needs a clear privacy model early.
-- **LLM costs** — frequent proactive features could be expensive; may need local models or smart caching.
-- **Platform choice** — web-first vs. native mobile affects architecture; decide before Phase 2.
-- **Scope creep** — the roadmap is deliberately staged; resist adding features ahead of their phase.
+## Timeline Philosophy
+
+No fixed dates yet — ASI is pre-code. Instead:
+
+- **Quality gates:** a phase ends when its milestone demo works end-to-end, not on a calendar.
+- **Weekly reviews:** roadmap is revisited weekly once development starts.
+- **Kill criteria:** if a feature doesn't serve the core loop (capture → organize → brief), it waits.
+
+## Risks & Mitigations
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| LLM costs scale badly | High | Usage metering day one; caching; smaller models for simple intents |
+| Cross-platform parity lag | Medium | Shared API + design system; web-first then port |
+| Privacy backlash | High | Privacy-first architecture; transparent memory controls |
+| Notification fatigue | Medium | "Calm tech" principle; user-controlled frequency |
+| Scope creep | Medium | Phase gating; PRD sign-off before new features |
+
+## Open Questions
+
+- [ ] Native mobile (Swift/Kotlin) vs cross-platform (React Native/Flutter)?
+- [ ] Desktop: native app vs Electron/Tauri wrapper vs web-only?
+- [ ] Which LLM provider(s)? Cost vs capability tradeoff.
+- [ ] Sync model: cloud-authoritative vs CRDT/local-first?
+- [ ] Pricing model: free tier limits? subscription?

@@ -19,19 +19,34 @@ cd asi-assisted-personal-intelligence
 
 ```
 .
-├── README.md          # Project overview
+├── README.md          # Project overview & doc index
 ├── docs/              # Detailed documentation
-│   ├── VISION.md
-│   ├── ROADMAP.md
-│   ├── FEATURES.md
-│   ├── ARCHITECTURE.md
-│   └── GETTING_STARTED.md
+│   ├── VISION.md          # Why ASI exists
+│   ├── PRD.md             # Product requirements & user stories
+│   ├── ROADMAP.md         # Phased development plan
+│   ├── FEATURES.md        # Feature catalog
+│   ├── ARCHITECTURE.md    # System design
+│   ├── DESIGN.md          # Brand & UX direction
+│   └── GETTING_STARTED.md # This file
 └── (code coming soon)
 ```
 
+## Development workflow (planned)
+
+- `main` — stable, releasable state
+- Feature branches → PR → review → merge
+- Docs live in `docs/` and are updated alongside code changes
+
 ## Contributing
 
-Contributions are welcome once the project has code. Until then, feel free to open [GitHub issues](https://github.com/b0urbonn/asi-assisted-personal-intelligence/issues) to discuss ideas, features, or the roadmap.
+Contributions are welcome once the project has code. Until then, open [GitHub issues](https://github.com/b0urbonn/asi-assisted-personal-intelligence/issues) to discuss ideas, features, or the roadmap.
+
+Areas where feedback is especially valuable right now:
+
+- Platform priorities (which device first?)
+- Feature priorities within each phase
+- Privacy & data-handling expectations
+- Integrations you wish existed
 
 ## License
 
