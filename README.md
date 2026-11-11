@@ -2,88 +2,173 @@
 
 <a href="docs/README.md"><img src="assets/banner.svg" alt="ASI — Assisted Personal Intelligence" width="100%"></a>
 
-### ✦ Assisted Personal Intelligence
+# ✦ Assisted Personal Intelligence
 
-**Your mind, *externally* upgraded.**
+### *Your mind, externally upgraded.*
 
-ASI is a self-hosted AI companion for your Mac, Windows PC, iPhone, and Android — **one private brain on your own hardware**, remembering what matters, anticipating what you need, and quietly running your day.
+**A self-hosted AI companion for your Mac, Windows PC, iPhone, and Android — one private brain on your own hardware.**
 
-[![Status](https://img.shields.io/badge/status-coming%20soon-orange)]()
-[![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20Android%20%7C%20macOS%20%7C%20Windows%20%7C%20Web-blue)]()
-[![Self-hosted](https://img.shields.io/badge/deployment-self--hosted-success)]()
-[![License](https://img.shields.io/badge/license-TBD-lightgrey)]()
+[![Status](https://img.shields.io/badge/status-coming%20soon-orange?style=flat-square)]()
+[![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20Android%20%7C%20macOS%20%7C%20Windows%20%7C%20Web-blue?style=flat-square)]()
+[![Deployment](https://img.shields.io/badge/deployment-self--hosted-success?style=flat-square)]()
+[![License](https://img.shields.io/badge/license-TBD-lightgrey?style=flat-square)]()
+[![Docs](https://img.shields.io/badge/docs-extensive-8b5cf6?style=flat-square)](docs/README.md)
 
 </div>
 
 ---
 
-## ⚡ What is ASI?
+## 🌌 The Idea
 
-ASI (Assisted Personal Intelligence) is not another chatbot. It's a **persistent, context-aware presence** running on *your* hardware — one private brain that every device connects to:
+ASI isn't another chatbot you visit — it's a **persistent presence** running on *your* machines. One brain. Every device. Ready before you ask.
 
-- 🧠 **Remembers** — your routines, preferences, goals, and commitments
-- 🔮 **Anticipates** — briefings, prep nudges, and follow-ups, surfaced before you ask
-- 🎙️ **Speaks** — voice-first when you want it, text when you don't
-- ✍️ **Acts with you** — drafts, schedules, and organizes (always with your approval)
-- 💻 **Works everywhere** — coding, teaching, office work, research, social, life admin
+<table>
+<tr>
+<td width="50%">
 
-One assistant. Every device. Zero context-switching.
+### 🧠 Remembers
+Your routines, preferences, goals, and commitments — across every device.
 
-## 🏗️ How it works
+</td>
+<td width="50%">
 
-```
-  iPhone · Android · Mac · Windows · Web
-              │  all thin clients
-              ▼
-      ┌───────────────┐
-      │  ASI Core     │   runs on YOUR machine
-      │  ~/.asi/      │   memory · tasks · schedules · AI
-      └───────────────┘
-```
+### 🔮 Anticipates
+Briefings, prep nudges, and follow-ups — surfaced before you think to ask.
 
-- **Self-hosted** — your data lives on your hardware, not a vendor's cloud
-- **Single brain** — every device reads/writes the same instance. No sync conflicts.
-- **Pluggable AI** — bring your own API keys or run local models
-- **Private by default** — no accounts, no telemetry, no open ports
+</td>
+</tr>
+<tr>
+<td>
 
-## 📱 Platforms
+### 🎙️ Speaks
+Voice-first when you want it, text when you don't.
 
-| Platform | Status |
-|----------|--------|
-| 💻 macOS (server + app) | Planned — Phase 1 |
-| 🪟 Windows | Planned |
-| 📱 iOS | Planned — Phase 4 |
-| 🤖 Android | Planned — Phase 4 |
-| 🌐 Web | Planned — Phase 1 |
+</td>
+<td>
 
-## 🗺️ Documentation
+### ✍️ Acts with you
+Drafts, schedules, organizes — always with your approval.
 
-Full docs index: **[`docs/README.md`](docs/README.md)**
+</td>
+</tr>
+<tr>
+<td>
 
-| Doc | What's inside |
-|-----|---------------|
-| [Vision](docs/VISION.md) | Why ASI exists, principles, what success looks like |
-| [PRD](docs/PRD.md) | Product requirements: personas, use-case domains, user stories, metrics |
-| [Roadmap](docs/ROADMAP.md) | 4-phase plan with milestones, gates, and risks |
-| [Features](docs/FEATURES.md) | Feature catalog with P0/P1/P2 priorities |
-| [Architecture](docs/ARCHITECTURE.md) | System design, data model, API surface, security |
-| [Design](docs/DESIGN.md) | Brand personality, UX principles, screens |
-| [Getting Started](docs/GETTING_STARTED.md) | Repo layout, contributing, doc map |
+### 💻 Works everywhere
+Coding, teaching, office work, research, social, life admin.
 
-## 🛣️ Roadmap at a glance
+</td>
+<td>
 
-```
-Phase 1          Phase 2           Phase 3            Phase 4
-Core Assistant → Personal Context → Proactive AI   → Everywhere
-(server + chat   (memory, cal,     (briefings,      (native apps,
- + voice+tasks)   email, goals)     insights,         wake-word,
-                                  automation)        plugins)
-```
+### 🔒 Stays home
+Your data lives on your hardware — never a vendor's cloud.
 
-## 🚀 Status
-
-**Coming soon** — we're designing the foundation. Follow the repo for updates.
+</td>
+</tr>
+</table>
 
 ---
 
+## 🏗️ How It Works
+
+<div align="center">
+
+```
+┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
+│  iPhone │ │ Android │ │   Mac   │ │ Windows │ │   Web   │
+└────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘
+     └───────────┴─────┬─────┴───────────┘           │
+                  all thin clients                    │
+                       ▼                             ▼
+              ┌─────────────────┐
+              │   ASI CORE      │   runs on YOUR machine
+              │   ~/.asi/       │   memory · tasks · schedules · AI
+              └─────────────────┘
+```
+
+**Self-hosted** · **Single brain** · **Pluggable AI** · **Private by default**
+
+</div>
+
+---
+
+## 🗺️ Roadmap
+
+```
+ Phase 1          Phase 2           Phase 3            Phase 4
+┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐
+│  CORE      │ │  PERSONAL  │ │ PROACTIVE  │ │ EVERYWHERE │
+│ ASSISTANT  │▶│  CONTEXT   │▶│ INTELLIGENCE│▶│            │
+│            │ │            │ │            │ │            │
+│ server+    │ │ memory +   │ │ briefings  │ │ native     │
+│ chat+voice │ │ calendar + │ │ insights + │ │ mobile +   │
+│ +tasks     │ │ email+goals│ │ automation │ │ desktop +  │
+│            │ │            │ │            │ │ wake-word  │
+└────────────┘ └────────────┘ └────────────┘ └────────────┘
+```
+
+| Phase | Deliverable | Exit gate |
+|-------|-------------|-----------|
+| **1 — Core** | Self-hosted server, chat + voice, tasks, notes | Daily-driver MVP |
+| **2 — Context** | Memory, calendar, email, goals, morning brief | ASI knows your day |
+| **3 — Proactive** | Suggestions, follow-ups, weekly reviews | ASI works while you sleep |
+| **4 — Everywhere** | Native apps, ambient voice, plugins | ASI on every device |
+
+---
+
+## 📚 Documentation
+
+<sub>Full index with reading order & conventions: [`docs/README.md`](docs/README.md)</sub>
+
+| Document | Contents |
+|----------|----------|
+| 📖 [`VISION.md`](docs/VISION.md) | Why ASI exists · principles · success criteria |
+| 📋 [`PRD.md`](docs/PRD.md) | Personas · use-case domains · user stories · metrics |
+| 🛤️ [`ROADMAP.md`](docs/ROADMAP.md) | Phases · milestones · risks · open questions |
+| ✅ [`FEATURES.md`](docs/FEATURES.md) | Feature catalog with P0/P1/P2 priorities |
+| 🏛️ [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Deployment · data model · API · security |
+| 🎨 [`DESIGN.md`](docs/DESIGN.md) | Brand · UX principles · screens · interaction model |
+| 🚀 [`GETTING_STARTED.md`](docs/GETTING_STARTED.md) | Repo layout · contributing · doc map |
+
+<details>
+<summary><b>📖 Doc conventions</b></summary>
+
+- Every doc has a **status header**: `draft → review → approved → living`
+- Features are prioritized: **`P0`** must-have · **`P1`** should-have · **`P2`** nice-to-have
+- Docs are updated alongside code — they are the source of truth, not an afterthought
+
+</details>
+
+---
+
+## 📊 Project Status
+
+| Area | State |
+|------|-------|
+| 📐 Product definition | ✅ Complete (PRD, personas, domains) |
+| 🗺️ Roadmap | ✅ Complete (4 phases, 6 milestones) |
+| 🏛️ Architecture | 📝 Draft v0.3 |
+| 🎨 Design direction | 📝 Draft v0.2 |
+| 💻 Code | ⏳ Coming soon |
+
+---
+
+## 🤝 Contributing
+
+Docs-first project — feedback shapes the build. Open an [issue](https://github.com/b0urbonn/asi-assisted-personal-intelligence/issues) to discuss:
+
+- Platform priorities (what ships first?)
+- Feature priorities within each phase
+- Work domains that matter most to you
+- Privacy expectations
+- Integrations you wish existed
+
+---
+
+<div align="center">
+
+**Coming soon** 🚀 — we're designing the foundation.
+
 <sub>Built with intent. Your data stays yours. 🛡️</sub>
+
+</div>
