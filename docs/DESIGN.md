@@ -4,11 +4,12 @@
 
 ## Brand Personality
 
-ASI should feel like a **calm, capable presence** — not a flashy AI demo.
+ASI should feel like a **discreetly brilliant presence** — the sense that someone capable is quietly watching your back. Think less "app," more "atmosphere."
 
 | We are | We are not |
 |--------|------------|
 | Calm | Noisy, gamified |
+| Anticipatory | Reactive, passive |
 | Intelligent | Robotic, jargon-heavy |
 | Trustworthy | Creepy, surveillance-y |
 | Minimal | Cluttered, dashboard-heavy |
@@ -16,14 +17,18 @@ ASI should feel like a **calm, capable presence** — not a flashy AI demo.
 
 ## Voice & Tone
 
-- **Concise** — ASI gets to the point; respects your time
-- **Warm but not saccharine** — like a good colleague, not a cheerleader
+ASI's personality: **a brilliant colleague who's been paying attention** — concise, warm, confident without arrogance, honest about uncertainty.
+
+- **Concise** — gets to the point; respects your time
+- **Proactive** — offers, doesn't wait; suggests, doesn't lecture
 - **Honest** — admits uncertainty, never fakes confidence
 - **Quiet confidence** — helpful without being pushy
 
 Examples:
-- ✅ "You have 3 tasks due today. Want me to order them by priority?"
+- ✅ "Morning. You've got 3 meetings and the Q3 report is due at 5. Want me to block focus time before lunch?"
+- ✅ "You mentioned wanting to follow up with Sam — it's been 4 days. Draft a nudge?"
 - ❌ "GREAT NEWS! I found some AMAZING tasks for you!!! 🎉"
+- ❌ "As an AI language model, I cannot…" (ASI doesn't hide behind disclaimers)
 
 ## UX Principles
 
@@ -33,6 +38,8 @@ Examples:
 4. **Consistent across devices** — same mental model on phone, desktop, web
 5. **Forgiving** — undo everywhere; nothing is permanent without confirmation
 6. **Calm notifications** — batched, prioritized, user-controlled
+7. **Voice-ready** — every core action should be doable hands-free; text is the fallback, not the primary
+8. **Ambient by default** — ASI surfaces itself at the right moments; doesn't demand attention
 
 ## Visual Direction
 
@@ -41,6 +48,7 @@ Examples:
 - **Typography:** highly readable; strong hierarchy
 - **Iconography:** simple, consistent line style
 - **Motion:** subtle, purposeful — communicates state, never decorates
+- **Voice UI:** when voice is active, the interface recedes — minimal orb/waveform, content secondary
 
 *(Exact palette, type scale, and component specs TBD during Phase 1 UI work.)*
 
@@ -48,9 +56,17 @@ Examples:
 
 | Screen | Purpose | Priority |
 |--------|---------|----------|
-| Chat / Assistant | Primary interface — talk to ASI | Phase 1 |
-| Today | Daily briefing: schedule, tasks, reminders | Phase 2 |
+| Assistant | Primary interface — chat + voice | Phase 1 |
+| Today | Daily briefing: schedule, tasks, reminders, suggestions | Phase 2 |
 | Tasks | Full task management | Phase 1 |
 | Memory | View/edit what ASI knows about you | Phase 2 |
 | Insights | Weekly reviews, habit analytics | Phase 3 |
-| Settings | Integrations, notifications, privacy | Phase 1 |
+| Settings | Integrations, notifications, privacy, voice prefs | Phase 1 |
+
+## Interaction Model
+
+ASI supports three modes, blending seamlessly:
+
+- **Ambient** — briefings and nudges arrive on their own
+- **Conversational** — chat or voice, your choice per moment
+- **Invisible** — automations run silently in the background

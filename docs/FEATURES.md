@@ -6,8 +6,10 @@ Complete planned feature catalog, organized by capability area and phase.
 
 ### Conversation
 - [ ] Natural-language chat with streaming responses
+- [ ] Voice conversation — push-to-talk input, spoken responses
 - [ ] Session memory — follow-up questions with context
 - [ ] Quick capture: type or dictate tasks, notes, reminders
+- [ ] Cross-device conversation continuity
 
 ### Tasks & Reminders
 - [ ] Create, edit, complete, delete tasks
@@ -42,12 +44,14 @@ Complete planned feature catalog, organized by capability area and phase.
 
 ## Phase 3 — Proactive Intelligence
 
+- [ ] Ambient morning briefing — ASI surfaces your day before you ask
 - [ ] Context-aware suggestions ("meeting with X at 2 — review the doc?")
 - [ ] Follow-up tracking ("you said you'd send the report — done?")
 - [ ] Weekly review: time usage, accomplishments, patterns
 - [ ] Natural-language automation rules
 - [ ] Smart notification delivery (batched, prioritized)
 - [ ] Meeting prep nudges
+- [ ] Hands-free voice conversations for on-the-go use
 
 ## Phase 4 — Extensions
 
@@ -56,7 +60,7 @@ Complete planned feature catalog, organized by capability area and phase.
 - [ ] Native Android app
 - [ ] Desktop apps (macOS, Windows)
 - [ ] Offline mode for core features
-- [ ] Voice interface (push-to-talk → wake-word evaluation)
+- [ ] Wake-word / always-on ambient voice mode
 
 ### Ecosystem
 - [ ] Public API for integrations

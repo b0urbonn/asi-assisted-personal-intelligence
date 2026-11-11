@@ -25,6 +25,7 @@
 
 ### Deliverables
 - [ ] Web chat interface with streaming responses
+- [ ] Voice input/output (push-to-talk → hands-free conversation)
 - [ ] Task management: create, list, complete, prioritize, due dates
 - [ ] Reminders with push/email notification groundwork
 - [ ] Quick-capture notes
@@ -68,6 +69,7 @@ ASI briefs you each morning with real calendar + task context.
 - [ ] Weekly review: time usage + habit insights
 - [ ] Natural-language automation rules
 - [ ] Smart notification delivery (right time, right channel, batched)
+- [ ] Ambient briefing mode — ASI surfaces itself at the right moments
 - [ ] Cost optimization: caching, smart model routing
 
 ### Milestone M4 — "It Works While I Sleep"
@@ -86,7 +88,7 @@ Invite-only beta with mobile apps (Phase 4 work begins in parallel).
 - [ ] Native iOS app
 - [ ] Native Android app
 - [ ] Desktop apps (macOS, Windows — approach TBD: native vs web wrapper)
-- [ ] Voice interface (push-to-talk, wake-word evaluation)
+- [ ] Wake-word / ambient always-on voice
 - [ ] Offline mode / local-first option
 - [ ] Plugin & integration API (Slack, Notion, Todoist, GitHub…)
 - [ ] Integration marketplace (if traction warrants)

@@ -88,6 +88,12 @@ All clients are thin — they render UI, capture input, and consume the API. Sha
 - Webhook/event ingestion where supported
 - Each integration is a plugin with scoped permissions — ASI can only access what the user grants
 
+### Voice Pipeline
+
+- Speech-to-text / text-to-speech via provider APIs (Phase 1: push-to-talk)
+- Low-latency turn-taking design; streaming STT/TTS
+- Wake-word / always-on mode evaluated in Phase 4 (on-device vs cloud tradeoffs)
+
 ### Notification & Scheduler
 
 - Push (APNs/FCM), email digests, in-app inbox

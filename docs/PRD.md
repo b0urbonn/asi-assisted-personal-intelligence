@@ -4,9 +4,9 @@
 
 ## 1. Overview
 
-**Assisted Personal Intelligence (ASI)** is a cross-platform AI personal assistant for iOS, Android, macOS, Windows, and web. It combines conversational AI, persistent memory, task management, and proactive assistance to reduce mental overhead.
+**Assisted Personal Intelligence (ASI)** is an always-available AI companion for iOS, Android, macOS, Windows, and web. It combines persistent memory, conversational and voice interaction, task management, and proactive assistance to reduce mental overhead.
 
-**One assistant. Every device. Zero context-switching.**
+**One presence. Every device. Ready before you ask.**
 
 ## 2. Problem Statement
 
@@ -65,7 +65,8 @@ People juggle tasks, calendars, email, and notes across disconnected tools — r
 - As a user, I can chat with ASI in natural language to create tasks and set reminders.
 - As a user, I can see today's tasks and mark them complete.
 - As a user, I can dictate or type quick notes.
-- As a user, my conversation context carries across messages within a session.
+- As a user, I can talk to ASI via voice and hear it respond.
+- As a user, my conversation context carries across messages and devices.
 - As a user, I can access ASI from both my phone and desktop with the same account.
 
 ### Phase 2 — Personal Context
@@ -76,24 +77,27 @@ People juggle tasks, calendars, email, and notes across disconnected tools — r
 - As a user, ASI tracks my goals and shows progress over time.
 
 ### Phase 3 — Proactive Intelligence
+- As a user, ASI briefs me each morning before I even open the app.
 - As a user, I get smart suggestions based on my context and schedule.
 - As a user, ASI reminds me to follow up on things I said I'd do.
 - As a user, I get a weekly review of how I spent my time and what I accomplished.
 - As a user, I can set natural-language automations ("every Friday, remind me to…").
+- As a user, I can have a hands-free voice conversation while driving or cooking.
 
 ### Phase 4 — Extensions
 - As a user, I can use ASI on iOS, Android, macOS, and Windows with fully synced data.
-- As a user, I can talk to ASI via voice.
+- As a user, I can wake ASI by voice for ambient, always-on interaction.
 - As a user, I can use ASI offline for core features.
 - As a developer, I can build integrations via a public API and plugin system.
 
 ## 6. Scope
 
 ### In Scope (MVP)
-- Chat interface (web + mobile shells)
+- Chat + voice interface (web + mobile shells)
 - Task CRUD + reminders + quick notes
 - Session memory + basic preferences
 - Auth, sync foundation, cross-device continuity
+- Ambient morning briefing groundwork
 
 ### Out of Scope (for now)
 - Social/sharing features between users

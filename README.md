@@ -4,7 +4,7 @@
 
 ### Your mind, *externally* upgraded.
 
-**ASI is a cross-platform AI companion that lives on your phone and desktop — remembering what matters, handling the busywork, and quietly running your day.**
+**ASI is an always-available AI companion across your phone, desktop, and web — it remembers what matters, anticipates what you need, and quietly runs your day.**
 
 [![Status](https://img.shields.io/badge/status-coming%20soon-orange)]()
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20Android%20%7C%20macOS%20%7C%20Windows%20%7C%20Web-blue)]()
@@ -16,11 +16,11 @@
 
 ## ⚡ What is ASI?
 
-ASI (Assisted Personal Intelligence) is not another chatbot. It's a **persistent, context-aware intelligence layer** that sits across your devices and understands your life:
+ASI (Assisted Personal Intelligence) is not another chatbot. It's a **persistent, context-aware presence** that sits across your devices — aware of your context, attentive to what matters, ready before you think to ask:
 
 - 🧠 **Remembers** — your routines, preferences, goals, and commitments
-- 📅 **Knows your schedule** — calendar, tasks, and deadlines in one view
-- 🔮 **Anticipates** — morning briefings, smart nudges, follow-up reminders
+- 🔮 **Anticipates** — briefings, prep nudges, and follow-ups, surfaced before you ask
+- 🎙️ **Speaks** — voice-first when you want it, text when you don't
 - ✍️ **Acts with you** — drafts, schedules, and organizes (always with your approval)
 
 One assistant. Every device. Zero context-switching.
