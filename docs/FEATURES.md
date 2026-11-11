@@ -22,9 +22,9 @@ Complete planned feature catalog, organized by capability area and phase.
 - [ ] Full-text search
 
 ### Basics
-- [ ] Account auth (email + OAuth providers)
-- [ ] Settings: notification preferences, basic profile
-- [ ] Cross-device sync foundation (same account = same data)
+- [ ] Account-free setup: ASI core service on your machine, data in `~/.asi/`
+- [ ] Settings: notification preferences, LLM provider config, device pairing
+- [ ] One server, all devices — every client reads/writes the same instance (no sync conflicts)
 
 ## Phase 2 — Personal Context
 

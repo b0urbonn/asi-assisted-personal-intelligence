@@ -19,19 +19,21 @@
 
 ## Phase 1 — Core Assistant
 
-**Goal:** A working AI assistant you can talk to daily — tasks, reminders, notes.
+**Goal:** A working AI assistant you can talk to daily — tasks, reminders, notes — running on your own hardware.
 
-**Strategy:** Web-first to move fast; mobile/desktop shells reuse the same API.
+**Strategy:** Single-user, self-hosted from day one. The ASI core runs as a local service on your Mac/PC; the web UI and clients connect to it. Iteration is fast because there's no cloud infrastructure to manage — just your machine.
 
 ### Deliverables
 - [ ] Web chat interface with streaming responses
 - [ ] Voice input/output (push-to-talk → hands-free conversation)
+- [ ] ASI core server: single-process service, auto-start, `~/.asi/` data dir
+- [ ] One-command install / setup wizard (API key config, device pairing)
 - [ ] Task management: create, list, complete, prioritize, due dates
-- [ ] Reminders with push/email notification groundwork
+- [ ] Reminders with local + push notification groundwork
 - [ ] Quick-capture notes
 - [ ] Session-level conversation memory
-- [ ] Auth + per-user data isolation
-- [ ] Basic API (REST + WebSocket for chat)
+- [ ] Device pairing auth (localhost + LAN/VPN clients)
+- [ ] Local API (REST + WebSocket for chat)
 
 ### Milestone M1 — "First Conversation"
 Chat that can create a task from natural language and confirm it.
@@ -48,7 +50,7 @@ A user can run their day through ASI: capture → schedule → complete.
 ### Deliverables
 - [ ] Long-term memory store (preferences, routines, recurring facts)
 - [ ] Memory transparency: view, edit, delete what ASI knows
-- [ ] Cross-device sync (same tasks/conversations on web ↔ mobile shell)
+- [ ] Cross-device sync becomes trivial — all devices read/write the same server (no sync conflicts, one source of truth)
 - [ ] Calendar integration (read schedule, create events)
 - [ ] Email integration (summaries, draft replies)
 - [ ] Goal tracking with progress over time
@@ -80,9 +82,9 @@ Invite-only beta with mobile apps (Phase 4 work begins in parallel).
 
 ---
 
-## Phase 4 — Extensions & Platforms
+## Phase 4 — Everywhere
 
-**Goal:** ASI everywhere — native apps, voice, and an ecosystem.
+**Goal:** ASI installed on every device you own — native apps, ambient voice, and an ecosystem.
 
 ### Deliverables
 - [ ] Native iOS app

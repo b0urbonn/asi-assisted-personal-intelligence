@@ -4,9 +4,9 @@
 
 ## 1. Overview
 
-**Assisted Personal Intelligence (ASI)** is an always-available AI companion for iOS, Android, macOS, Windows, and web. It combines persistent memory, conversational and voice interaction, task management, and proactive assistance to reduce mental overhead.
+**Assisted Personal Intelligence (ASI)** is a self-hosted AI companion you install across your own devices — iOS, Android, macOS, Windows — all connected to a private ASI core running on hardware you control (your Mac, PC, or home server). It combines persistent memory, conversational and voice interaction, task management, and proactive assistance to reduce mental overhead.
 
-**One presence. Every device. Ready before you ask.**
+**One private brain. Every device. Ready before you ask.**
 
 ## 2. Problem Statement
 
@@ -17,6 +17,8 @@ People juggle tasks, calendars, email, and notes across disconnected tools — r
 - Mental overhead of tracking "what needs doing"
 - No single place that understands the full picture
 - Different context on phone vs desktop — you re-explain yourself
+- Every "smart" tool wants your most personal data stored on *their* cloud
+- No single place that holds your whole life — and no easy way to back it up or leave
 
 ## 3. Goals & Success Metrics
 
@@ -34,8 +36,8 @@ People juggle tasks, calendars, email, and notes across disconnected tools — r
 | Task capture time (p50) | < 5s |
 | Morning briefing open rate | > 60% |
 | Suggestion acceptance rate | > 30% |
-| Cross-device session continuity | > 80% of users sync |
-| Retention (D30) | > 40% |
+| Device sync reliability | > 99% uptime when server is on |
+| Time-to-install (fresh machine → first conversation) | < 30 min |
 
 ## 4. Personas
 
@@ -103,36 +105,41 @@ People juggle tasks, calendars, email, and notes across disconnected tools — r
 - Social/sharing features between users
 - Team/enterprise collaboration
 - Third-party plugin marketplace (API first, marketplace later)
-- On-device LLM inference
+- Local LLM inference (Phase 4+ — hosted/user-key APIs first)
 - Hardware integrations (smart home, wearables)
+- Multi-user / team features (single-user personal system first)
 
-## 7. Platforms
+## 7. Platforms & Deployment
 
-| Platform | Strategy | Priority |
-|----------|----------|----------|
-| Web | Responsive web app — the fast iteration platform | Phase 1 |
-| iOS | Native or React Native — TBD | Phase 4 (beta earlier) |
-| Android | Same stack as iOS | Phase 4 |
-| macOS / Windows | Desktop app or web wrapper — TBD | Phase 4 |
+ASI is **self-hosted**: a single-user core server runs on your own hardware; every device connects to it.
+
+| Component | Platform | Strategy | Priority |
+|-----------|----------|----------|----------|
+| Core server | macOS / Windows / Linux | Always-on service (menu bar app or daemon) | Phase 1 |
+| Desktop client | macOS, Windows | Native app or menu-bar companion | Phase 1–2 |
+| Mobile client | iOS, Android | App connecting to your server over LAN/VPN | Phase 2–4 |
+| Web client | Any browser | Thin client to your server (LAN or tunnel) | Phase 1 |
+
+Remote access (phone away from home) via Tailscale/WireGuard or user-configured tunnel — never an open port by default.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the technical approach.
 
 ## 8. Privacy & Data
 
-- Encryption at rest and in transit
-- Per-user isolation; **no training on user data**
-- Full memory transparency: view, export, delete
+- **Self-hosted by default** — all personal data (memory, tasks, notes, logs) lives on your hardware
+- Encryption at rest and in transit; per-device auth tokens
+- Full memory transparency: view, export, delete — it's just files on your disk
 - Per-integration opt-in consent
-- Local-first / on-device mode explored in Phase 4
-- Data residency options under evaluation
+- LLM calls: configurable — local models, your own API keys, or provider APIs you choose; nothing is sent anywhere you didn't configure
+- Easy backup/export of the entire ASI data directory
 
 ## 9. Risks
 
 | Risk | Impact | Mitigation |
 |------|--------|------------|
-| LLM cost at scale | High | Usage metering, caching, model routing |
-| Cross-platform parity lag | Medium | Shared API + design system; web-first |
-| Privacy concerns | High | Privacy-first design; transparent controls |
-| Notification fatigue | Medium | Calm-tech principle; user-controlled frequency |
+| Home server downtime | Medium | Auto-restart service; clients show offline state gracefully |
+| LLM cost at scale | Medium | Local/small models for simple intents; user-chosen providers |
+| Remote access complexity | Medium | Tailscale-first; simple setup wizard |
+| Privacy concerns | Low | Self-hosted = data never leaves your network |
 | Scope creep | Medium | Phase gating; PRD sign-off for new features |
-| App store policy (AI features) | Low-Med | Review guidelines early; web fallback |
+| Hardware requirements | Low | Documented minimum specs; graceful degradation |

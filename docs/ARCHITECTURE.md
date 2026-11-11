@@ -1,15 +1,45 @@
 # Architecture
 
-> Status: draft v0.2 — pre-development. Captures current thinking for a cross-platform (mobile + desktop + web) product. Will evolve during Phase 1.
+> Status: draft v0.2 — pre-development. Self-hosted, single-user, cross-device design for macOS, Windows, iOS, Android, and web clients. Will evolve during Phase 1.
+
+## Deployment Model
+
+ASI is a **self-hosted personal system** — one core server on your hardware, every device as a client.
+
+```
+YOUR HARDWARE                                    YOUR DEVICES
+┌─────────────────────────────────┐
+│  ASI Core Server                │
+│  (Mac mini / desktop / home     │
+│   server — always on)           │
+│                                 │
+│  ┌───────────────────────────┐  │
+│  │ ~/.asi/                   │  │
+│  │  data/   (tasks, memory,  │  │
+│  │          notes, sessions) │  │
+│  │  config/ (settings, keys) │  │
+│  │  logs/                    │  │
+│  └───────────────────────────┘  │
+└──────────────┬──────────────────┘
+               │  LAN direct · or Tailscale/WireGuard for remote
+               ▼
+     ┌──────────────────────────────────┐
+     │  iPhone · Android · Mac · Windows│
+     │  · Web — all thin clients        │
+     └──────────────────────────────────┘
+```
+
+- **One instance, one user** — no multi-tenancy, no accounts on someone else's cloud
+- **Server:** runs as an always-on service — launchd (macOS), systemd/NSSM (Windows/Linux), or a menu-bar companion app
+- **Remote access:** Tailscale or WireGuard mesh VPN recommended; no port forwarding required
+- **Data dir:** everything lives under `~/.asi/` — inspectable, backable-up, portable
+- **External calls:** only what you configure — LLM API keys you provide, calendar/email OAuth you grant
 
 ## Overview
 
-ASI is a cloud-backed, cross-platform personal assistant:
-
-- **Clients:** web app, iOS, Android, macOS, Windows — all thin clients over a shared API
-- **Backend:** API gateway + core orchestration engine + data stores
-- **Sync:** single source of truth in the cloud; clients stay in sync via realtime channels
-- **AI:** pluggable LLM providers with a prompt/tool orchestration layer
+- **Core server:** the brain — API, engine, stores, scheduler. Single process (or small process set) on your machine.
+- **Clients:** web app, iOS, Android, macOS, Windows — thin clients over the local/remote API
+- **Sync:** not "cloud sync" — your devices all read/write the same server, so there's literally one copy of your data
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -42,22 +72,22 @@ ASI is a cloud-backed, cross-platform personal assistant:
 
 ### Clients
 
-All clients are thin — they render UI, capture input, and consume the API. Shared business logic lives server-side so behavior is identical across devices.
+All clients are thin — they render UI, capture input, and consume the API served by your ASI core. They can live on the same machine as the server (localhost) or connect remotely.
 
 | Client | Tech (leaning) | Notes |
 |--------|----------------|-------|
-| Web | React / Next.js | Fast iteration; also the desktop fallback via PWA |
-| iOS / Android | React Native (Expo) or native | Single codebase preferred; decide in Phase 4 |
-| Desktop | Tauri wrapper of web app, or Electron | Tauri preferred for size/perf; revisit later |
+| macOS | Menu-bar app (Electron/Tauri) + web UI | Can double as the server host |
+| Windows | Desktop app (Tauri/Electron) or web UI | Same |
+| iOS / Android | React Native (Expo) or native | Connects to server over LAN/VPN |
+| Web | React / Next.js served by the core | Works in any browser, local or tunneled |
 
-**Offline strategy (Phase 4):** local cache for tasks/notes + queued actions; sync on reconnect. Full local-first (CRDT) is an open question.
+**Offline strategy:** when the server is unreachable, clients show read-only cached data and queue actions; core features degrade gracefully.
 
-### API Gateway
+### API Layer
 
-- REST for CRUD operations; WebSocket (or SSE) for chat streaming
-- AuthN/AuthZ (JWT + refresh); per-user data isolation
-- Rate limiting, request validation, API versioning
-- Push notification dispatch (APNs / FCM)
+- REST for CRUD; WebSocket (or SSE) for chat streaming
+- Single-user auth: pairing tokens per device (like how you pair a phone to a server)
+- Localhost-first — zero config works out of the box on the host machine
 
 ### Core Engine
 
@@ -70,17 +100,20 @@ All clients are thin — they render UI, capture input, and consume the API. Sha
 
 | Store | Tech (leaning) | Contents |
 |-------|----------------|----------|
-| Primary DB | PostgreSQL | Users, tasks, notes, goals, sessions |
-| Vector memory | pgvector (or dedicated) | Long-term memory embeddings, recall |
-| Cache/queue | Redis | Sessions, rate limits, job queues |
-| Object storage | S3-compatible | Attachments, exports |
+| Primary DB | SQLite (default) / Postgres (optional) | Tasks, notes, goals, sessions, settings |
+| Vector memory | sqlite-vec / pgvector | Long-term memory embeddings, recall |
+| Queue | Built-in job runner (SQLite-backed) | Reminders, scheduled jobs |
+| Files | `~/.asi/data/` | Attachments, exports, backups |
+
+SQLite-first keeps install trivial (zero external services); Postgres optional for power users.
 
 ### LLM Provider
 
 - Pluggable interface — swap providers without client changes
-- Model routing: cheap model for intent classification, frontier model for complex reasoning
-- Prompt registry + versioning; per-user cost metering
-- Candidates: hosted frontier APIs first; local models evaluated in Phase 4
+- **User-configured:** bring your own API keys (OpenAI, Anthropic, etc.) or point at a local model (Ollama/LM Studio)
+- Model routing: cheap/local model for intent classification, stronger model for complex reasoning
+- Prompt registry + versioning; optional cost metering
+- Fully offline mode possible if a capable local model is configured
 
 ### Integrations
 
@@ -104,17 +137,17 @@ All clients are thin — they render UI, capture input, and consume the API. Sha
 
 | Decision | Options | Leaning |
 |----------|---------|---------|
+| Server runtime | Node/TypeScript vs Python | TypeScript (shared types with web) |
+| Primary DB | SQLite vs Postgres | SQLite default; Postgres optional |
 | Mobile stack | React Native / Flutter / native | React Native (Expo) for velocity |
-| Desktop | Tauri / Electron / web-only | Tauri wrapping web app |
-| Backend | TypeScript (NestJS) / Python (FastAPI) | TypeScript — shared types with web |
-| Database | Postgres + pgvector | Postgres |
-| Sync model | Cloud-authoritative / CRDT | Cloud-authoritative first |
-| LLM | Hosted API / local | Hosted API first |
+| Desktop | Tauri / Electron / native | Tauri wrapping web UI |
+| Remote access | Tailscale / WireGuard / tunnel | Tailscale-first |
+| LLM | User API keys / local model / both | Pluggable; local-friendly |
 
 ## Non-Functional Requirements
 
-- **Privacy:** encrypted at rest/in transit; per-user isolation; no training on user data; export/delete support
-- **Latency:** streamed chat, p95 first token < 2s; task CRUD p95 < 300ms
-- **Reliability:** graceful degradation when integrations/LLM are down (queue + retry)
-- **Cost:** per-user usage metering from day one
+- **Privacy:** self-hosted by design — data lives in `~/.asi/` on your machine; encrypted at rest; no telemetry by default
+- **Latency:** local network calls are fast; LLM latency dominated by provider (streaming masks it)
+- **Reliability:** server auto-restarts; clients degrade gracefully offline; single point of failure = your machine (backups recommended)
+- **Portability:** entire state is files — rsync/backup the data dir to migrate or restore
 - **Accessibility:** WCAG 2.1 AA on web; platform accessibility standards on mobile/desktop
