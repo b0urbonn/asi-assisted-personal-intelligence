@@ -1,12 +1,28 @@
 # Vision & Goals
 
-## What is ASI?
+> **Status:** draft · **Version:** 0.2 · **Last updated:** 2026-11-11
+
+## Table of Contents
+
+1. [What is ASI?](#1-what-is-asi)
+2. [The Model: One Private Brain, All Your Devices](#2-the-model-one-private-brain-all-your-devices)
+3. [The Shift](#3-the-shift)
+4. [The Problem](#4-the-problem)
+5. [The Vision](#5-the-vision)
+6. [Design Principles](#6-design-principles)
+7. [Success Looks Like](#7-success-looks-like)
+8. [Non-Goals](#8-non-goals)
+9. [Open Questions](#9-open-questions)
+
+---
+
+## 1. What is ASI?
 
 **Assisted Personal Intelligence (ASI)** is a personal AI companion you install on your own devices — your Mac, your Windows PC, your iPhone, your Android — all connected to one private brain running on hardware you control.
 
 Not a chatbot you visit. Not a cloud service holding your life. A presence that's *already there* — aware of your context, attentive to what matters, and ready before you think to ask.
 
-## The Model: One Private Brain, All Your Devices
+## 2. The Model: One Private Brain, All Your Devices
 
 ```
         ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
@@ -29,7 +45,7 @@ Not a chatbot you visit. Not a cloud service holding your life. A presence that'
 - **Every device is a window** — apps on iOS, Android, macOS, and Windows all connect to the same instance. Same memory, same tasks, same context.
 - **Centralized and unified by design** — one source of truth, not five apps with five partial copies of your life.
 
-## The Shift
+## 3. The Shift
 
 Most AI tools wait for you to show up and ask — and store everything on *their* servers. ASI inverts both:
 
@@ -44,7 +60,7 @@ Most AI tools wait for you to show up and ask — and store everything on *their
 
 The goal is the feeling of **a capable presence handling your backlog** — briefing you, tracking commitments, and nudging you at the right moment — so your attention stays on what only you can do.
 
-## The Problem
+## 4. The Problem
 
 Your life is scattered across tools that don't talk to each other:
 
@@ -56,7 +72,7 @@ Your life is scattered across tools that don't talk to each other:
 
 You become the integration layer. Things slip. You context-switch constantly. Your most personal data sits on servers you don't control.
 
-## The Vision
+## 5. The Vision
 
 ASI becomes a quiet, ever-present intelligence layer — running on your machines, following you everywhere:
 
@@ -70,17 +86,19 @@ ASI becomes a quiet, ever-present intelligence layer — running on your machine
 | **Follows you** | Same assistant, same memory, same context — phone ↔ desktop ↔ everywhere |
 | **Stays home** | Runs on your hardware; you decide what (if anything) goes to external AI APIs |
 
-## Design Principles
+## 6. Design Principles
 
-1. **Presence, not noise** — available always, interrupting never. Proactive but calm.
-2. **Privacy by architecture** — self-hosted by default. Your memory lives on your disk, not a vendor's.
-3. **Assist, don't replace** — ASI augments your judgment; never acts without your approval.
-4. **One mind, every device** — seamless sync is the whole point, not an afterthought.
-5. **Invisible when idle** — the best interface is the one you don't notice until you need it.
-6. **Open and extensible** — integrations and plugins so ASI grows with you.
-7. **Yours to keep** — no account on someone else's server, no subscription gate on your own data.
+| # | Principle | Meaning |
+|---|-----------|---------|
+| 1 | **Presence, not noise** | Available always, interrupting never. Proactive but calm. |
+| 2 | **Privacy by architecture** | Self-hosted by default. Memory lives on your disk, not a vendor's. |
+| 3 | **Assist, don't replace** | Augments your judgment; never acts without your approval. |
+| 4 | **One mind, every device** | Seamless sync is the whole point, not an afterthought. |
+| 5 | **Invisible when idle** | The best interface is the one you don't notice until you need it. |
+| 6 | **Open and extensible** | Integrations and plugins so ASI grows with you. |
+| 7 | **Yours to keep** | No account on someone else's server, no subscription gate on your own data. |
 
-## Success Looks Like
+## 7. Success Looks Like
 
 - 🌅 You wake up, glance at your phone → ASI already briefed you: today's schedule, top priorities, anything needing attention.
 - 🎙️ Driving or cooking → "ASI, what's on my plate today?" — a voice answer, hands-free.
@@ -90,10 +108,17 @@ ASI becomes a quiet, ever-present intelligence layer — running on your machine
 - 📊 Weekly reviews happen automatically with insights into where your time went.
 - 🤝 You trust ASI enough to let it handle routine follow-ups — and to tell it when it's wrong.
 
-## Non-Goals (for now)
+## 8. Non-Goals
 
 - ASI is **not** a social network or content platform.
 - ASI is **not** trying to replace your judgment or decision-making.
 - ASI is **not** a general-purpose AI playground — it's focused on personal organization and life management.
 - ASI is **not** surveillance — it helps you, it doesn't watch you.
 - ASI is **not** (initially) a multi-tenant SaaS — it's a personal system first. Sharing/team features may come later, but the core is single-user, self-hosted.
+
+## 9. Open Questions
+
+- [ ] What should the wake-word / invocation feel like across devices?
+- [ ] How "human" should ASI's personality be — name, avatar, quirks?
+- [ ] Which local LLMs are actually good enough for core tasks?
+- [ ] Should ASI have a "quiet hours" / do-not-disturb mode by default?
