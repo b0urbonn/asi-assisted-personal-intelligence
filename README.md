@@ -2,26 +2,23 @@
 
 An AI-powered personal assistant designed to help you organize your life, tasks, and goals — adapting to how you actually work.
 
-## About
-
 ASI aims to be more than a chatbot: a persistent, context-aware companion that learns your routines, anticipates your needs, and helps you stay on top of what matters.
 
-## Project Plan
+## Documentation
 
-- [ ] **Phase 1 — Core Assistant**
-  - Conversational interface for daily tasks, reminders, and notes
-  - Task and goal tracking
-- [ ] **Phase 2 — Personal Context**
-  - Memory of preferences, routines, and recurring schedules
-  - Calendar and email integration
-- [ ] **Phase 3 — Proactive Intelligence**
-  - Smart suggestions and automated follow-ups
-  - Summaries and insights across your data
-- [ ] **Phase 4 — Extensions**
-  - Mobile access, voice interface, and third-party integrations
+- [Vision & Goals](docs/VISION.md)
+- [Project Plan & Roadmap](docs/ROADMAP.md)
+- [Features](docs/FEATURES.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Getting Started](docs/GETTING_STARTED.md)
 
-## Status
+## Quick Status
 
-**Coming soon** 🚀
+| Phase | Focus | Status |
+|-------|-------|--------|
+| 1 | Core Assistant | Planned |
+| 2 | Personal Context | Planned |
+| 3 | Proactive Intelligence | Planned |
+| 4 | Extensions | Planned |
 
-Stay tuned — we're just getting started.
+**Coming soon** 🚀 — we're just getting started.
